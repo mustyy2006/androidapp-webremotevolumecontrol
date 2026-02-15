@@ -25,8 +25,12 @@ jobs:
         api-level: 33
         build-tools: 33.0.2
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+    - name: Make gradlew executable
+        run: chmod +x gradlew
+
+     -name: Build Debug APK
+        run: ./gradlew assembleDebug
+        
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
